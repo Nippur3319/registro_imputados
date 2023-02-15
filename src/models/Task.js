@@ -1,5 +1,6 @@
 import { Schema, model } from "mongoose";
 
+//esquema del objeto que se crea en la DB
 const taskSchema = new Schema(
   {
     title: {
