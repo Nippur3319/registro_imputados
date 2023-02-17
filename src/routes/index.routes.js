@@ -35,9 +35,13 @@ router.get("/edit/:id", async (req, res) => {
 
 router.post("/edit/:id", async (req, res) => {
   const { id } = req.params;
-
   await Task.findByIdAndUpdate(id, req.body);
+  res.redirect("/");
+});
 
+router.get("/delete/:id", async (req, res) => {
+  const { id } = req.params;
+  await Task.findByIdAndDelete(id);
   res.redirect("/");
 });
 
